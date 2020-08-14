@@ -6,8 +6,8 @@ try:
     output = PdfFileMerger()
     for i in range(len(sys.argv)-2):
         with open(str(sys.argv[i+2]), "rb") as f:
-            input = PdfFileReader(f)
-            output.append(input)
+            inputFile = PdfFileReader(f)
+            output.append(inputFile)
         print("Usuwam plik: "+str(sys.argv[i+2]))
         os.remove(str(sys.argv[i+2]))
     output.write(str(sys.argv[1]))
